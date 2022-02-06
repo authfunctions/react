@@ -6,6 +6,7 @@
   "repository": "https://github.com/authfunctions/react.git",
   "author": "Laurenz1606 <laurenz.rausche@gmail.com>",
   "license": "MIT",
+  "typings": "dist/index.d.ts",
   "private": false,
   "peerDependencies": {
     "react": "^17.0.2",
@@ -23,7 +24,14 @@
     "rimraf": "^3.0.2",
     "typescript": "^4.5.5"
   },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "example": "yarn build && cd example && yarn start"
+  },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "jwt-decode": "^3.1.2"
+  }
 }
