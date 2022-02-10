@@ -1,15 +1,9 @@
 import { NavigateFunction } from "react-router-dom";
-import { internal_fetch_auth, NavigateFunctionWrapper } from "../hooks";
+import { internal_fetch_auth, Return } from "../hooks";
 import { useToken } from "./useToken";
 
 interface Props {
   refreshToken: string;
-}
-
-interface Return {
-  code: number;
-  err: boolean;
-  nav: NavigateFunctionWrapper;
 }
 
 export type LogoutFunction = () => Promise<Return>;

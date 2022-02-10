@@ -1,16 +1,10 @@
 import { NavigateFunction } from "react-router-dom";
-import { internal_fetch_auth, NavigateFunctionWrapper } from "../hooks";
+import { internal_fetch_auth, Return } from "../hooks";
 
 interface Props {
   email: string;
   username: string;
   password: string;
-}
-
-interface Return {
-  code: number;
-  err: boolean;
-  nav: NavigateFunctionWrapper;
 }
 
 export type RegisterFunction = (props: Props) => Promise<Return>;
