@@ -21,19 +21,13 @@ export function useLogout(navigator: NavigateFunction): LogoutFunction {
       err: auth.err,
     };
 
-    if (auth.err) {
-      return {
-        ...returnValues,
-        nav: () => {},
-      };
-    }
-
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
 
     return {
       ...returnValues,
-      nav: (path?: string) => navigator(path || "/login"),
+      nav: (path?: string) =>
+        navigator((path || "/login") + "?r=" + window.location.pathname),
     };
   };
 }
