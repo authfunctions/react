@@ -9,7 +9,20 @@ import {
 } from "../hooks";
 import { useLogout } from "./useLogout";
 
-export function useFetch(navigator: NavigateFunction) {
+export type FetchFunction = <T>(
+  url: string,
+  method?: Methods | undefined,
+  body?: any,
+  headers?: object | undefined,
+) => Promise<{
+  err: boolean;
+  res: Response;
+  data: T | null;
+  nav: NavigateFunctionWrapper;
+  auth: AuthBody;
+}>;
+
+export function useFetch(navigator: NavigateFunction): FetchFunction {
   return async function <T>(
     url: string,
     method?: Methods,

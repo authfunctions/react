@@ -12,6 +12,7 @@ import Guard from "./Guard";
 export { Guard };
 
 export type { CheckFunction } from "./hooks/useCheck";
+export type { FetchFunction } from "./hooks/useFetch";
 export type { LoginFunction } from "./hooks/useLogin";
 export type { LogoutFunction } from "./hooks/useLogout";
 export type { RefreshFunction } from "./hooks/useRefresh";
