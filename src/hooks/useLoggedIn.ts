@@ -2,9 +2,9 @@ import { NavigateFunction } from "react-router-dom";
 import { useRefresh } from "./useRefresh";
 import { useCheck } from "./useCheck";
 
-export type CheckFunction = () => Promise<boolean>;
+export type LoggedInFunction = () => Promise<boolean>;
 
-export function useLoggedIn(navigator: NavigateFunction): CheckFunction {
+export function useLoggedIn(navigator: NavigateFunction): LoggedInFunction {
   const check = useCheck();
   const refresh = useRefresh(navigator);
 
