@@ -28,7 +28,7 @@ export default function Guard({ children, type, loader, path }: Props) {
         if (loggedInLocalVar === false) setLoggedState(true);
         else lpath = path || "/";
       }
-      if (lpath) window.location.pathname = lpath;
+      if (lpath) window.location.href = window.location.origin + lpath;
       setLoading(false);
     })();
   }, []);
