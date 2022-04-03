@@ -23,7 +23,7 @@ export default function Guard({ children, type, loader, path }: Props) {
       let lpath: undefined | string;
       if (type === "LoggedInOnly") {
         if (loggedInLocalVar) setLoggedState(true);
-        else lpath = path || "/login";
+        else lpath = (path || "/login") + "?r=" + window.location.pathname;
       } else if (type === "LoggedOutOnly") {
         if (loggedInLocalVar === false) setLoggedState(true);
         else lpath = path || "/";
